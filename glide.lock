@@ -1,0 +1,38 @@
+hash: 7fab3d125916cf61dc7706c2abf13966f378833d0dd896c974c4b12428f68d85
+updated: 2017-04-05T22:27:58.974832724-07:00
+imports:
+- name: github.com/cenkalti/backoff
+  version: 5d150e7eec023ce7a124856b37c68e54b4050ac7
+- name: github.com/codegangsta/negroni
+  version: c0db5feaa33826cd5117930c8f4ee5c0f565eec6
+- name: github.com/dghubble/go-twitter
+  version: fc93bb35701bb85903d17daa80a21a824b9c592f
+  subpackages:
+  - twitter
+- name: github.com/dghubble/oauth1
+  version: 70562a5920ad9b6ff03ef697c0f90ae569abbd2b
+- name: github.com/dghubble/sling
+  version: bbfb8293bd33a6baad33d718aacf66ef73a29f30
+- name: github.com/google/go-querystring
+  version: 53e6ce116135b80d037921a7fdd5138cf32d7a8a
+  subpackages:
+  - query
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/mux
+  version: 599cba5e7b6137d46ddf58fb1765f5d928e69604
+- name: github.com/mikeflynn/go-alexa
+  version: ca9bde7854923bcf74f5e1591d6d1a596492bb6f
+  subpackages:
+  - skillserver
+- name: github.com/Sirupsen/logrus
+  version: ba1b36c82c5e05c4f912a88eab0dcd91a171688f
+- name: golang.org/x/net
+  version: e90d6d0afc4c315a0d87a568ae68577cc15149a0
+  subpackages:
+  - context
+- name: golang.org/x/sys
+  version: d75a52659825e75fff6158388dddc6a5b04f9ba5
+  subpackages:
+  - unix
+testImports: []
