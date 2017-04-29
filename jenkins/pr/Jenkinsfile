@@ -10,7 +10,7 @@ properties([
       // Pull requests, with whitelisting/auth
       [$class: 'GhprbTrigger',
        adminlist: 'euank',
-       cron: 'H/1 * * * *',
+       cron: '*/1 * * * *',
        permitAll: false,
        displayBuildErrorsOnDownstreamBuilds: true,
        gitHubAuthId: '894ea30e-d9bd-456c-a090-291b3c339ada'],
