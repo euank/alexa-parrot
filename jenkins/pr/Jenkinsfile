@@ -13,7 +13,7 @@ properties([
        cron: '*/1 * * * *',
        permitAll: false,
        displayBuildErrorsOnDownstreamBuilds: true,
-       gitHubAuthId: '894ea30e-d9bd-456c-a090-291b3c339ada'],
+       gitHubAuthId: 'dd528eca-0dbc-4c17-a4c6-8e8a2ba7f43d'],
     ])
 ])
 
