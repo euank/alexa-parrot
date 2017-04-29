@@ -1,0 +1,37 @@
+#!groovy
+
+properties([
+    buildDiscarder(logRotator(daysToKeepStr: '20', numToKeepStr: '30')),
+
+    pipelineTriggers([
+      pollSCM('H/5 * * * *')
+    ])
+])
+
+node('docker') {
+  stage('SCM') {
+    checkout scm
+  }
+
+  stage('Build') {
+    sh '''#!/bin/bash -ex
+      docker run -v $(pwd):/go/src/github.com/euank/alexa-parrot \
+        -w /go/src/github.com/euank/alexa-parrot \
+        golang:1.8 \
+        make
+    '''
+  }
+
+  stage('Push') {
+    withCredentials([usernamePassword(credentialsId: 'quay-alexaparrot', 
+          passwordVariable: 'DOCKER_PASS', 
+          usernameVariable: 'DOCKER_USER')]) {
+
+      sh '''#!/bin/bash -ex
+        export HOME=${WORKSPACE}
+        docker login --username "${DOCKER_USER}" --password "${DOCKER_PASS}"
+        make docker-push
+      '''
+    }
+  }
+}
