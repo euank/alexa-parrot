@@ -30,7 +30,8 @@ node('docker') {
       sh '''#!/bin/bash -ex
         export HOME=${WORKSPACE}
         docker login --username "${DOCKER_USER}" --password "${DOCKER_PASS}" quay.io
-        make docker-push
+
+        ./jenkins/scripts/push-docker.sh
       '''
     }
   }
